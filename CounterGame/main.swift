@@ -7,5 +7,10 @@
 
 import Foundation
 
-print("Hello, World!")
+func counterGame(n: Int) -> String {
+    
+    return "Richard"
+}
+
+print(counterGame(n: 6))
 
