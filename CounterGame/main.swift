@@ -9,6 +9,7 @@ import Foundation
 
 func counterGame(n: Int) -> String {
     var v = Decimal(n)
+    var p = 1
     while v > 1 {
         var i = 1
         while Decimal(i) < v {
@@ -17,20 +18,25 @@ func counterGame(n: Int) -> String {
                 print("\(t) bingo!")
                 v = t / 2
                 print(v)
+                p = p + 1
                 break
             } else if t > v {
                 t = pow(2, i - 1)
                 print("\(t) is closest power of 2")
                 v = v - t
                 print(v)
+                p = p + 1
                 break
             }
             i += 1
         }
     }
-    
-    return "Richard"
+    if p % 2 == 0 {
+        return "Richard"
+    } else {
+        return "Louise"
+    }
 }
 
-print(counterGame(n: 1027))
+print(counterGame(n: 6))
 
